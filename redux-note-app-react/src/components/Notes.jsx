@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import NotesFom from "./components/NotesFom";
-import AllNotes from "./components/AllNotes";
+import React, { Component } from 'react';
+import NotesForm from './NotesForm';
+import AllNotes from './AllNotes';
 
 export default class Notes extends Component {
   render() {
     return (
       <React.Fragment>
         <h1>Version React de l'app des notes</h1>
-        <NotesFom />
+
+        <NotesForm />
         <hr />
         <AllNotes />
       </React.Fragment>
-    )
+    );
   }
 }

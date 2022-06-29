@@ -14,7 +14,7 @@ const NotesForm = () => {
   }
 
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
 
     dispatch(addNote(title, content))
 

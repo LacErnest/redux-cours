@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { removeNote } from "../actions/actions";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { removeNote } from '../actions/actions';
 
 class AllNotes extends Component {
-
   removeNote = (index) => {
     this.props.removeNote(index);
-  }
+  };
 
   render() {
-    const noteItems = this.props.notes.map((note, index) => (
+    const notesItems = this.props.notes.map((note, index) => (
       <li key={index}>
         <b>{note.title}</b>
         <button onClick={() => this.removeNote(index)}>Supprimer</button>
@@ -21,22 +20,21 @@ class AllNotes extends Component {
     return (
       <React.Fragment>
         <h3>Toutes les notes</h3>
-        <ul>{noteItems}</ul>
+
+        <ul>{notesItems}</ul>
       </React.Fragment>
-    )
+    );
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {
-    notes: state.notes
-  }
-}
+    notes: state.notes,
+  };
+};
 
 const mapDispatchToProps = {
   removeNote: removeNote,
-}
-
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AllNotes);

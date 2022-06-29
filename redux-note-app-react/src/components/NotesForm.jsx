@@ -1,48 +1,58 @@
-import React, { Component } from "react";
-import { addNote } from "../actions/actions";
-import { connect } from "react-redux"
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { addNote } from '../actions/actions';
 
 class NotesForm extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       title: '',
       content: '',
-    }
+    };
   }
 
   handleChange = (e) => {
-    this.state({ [e.target.name]: e.target.value })
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-  handleSubmit = (e) => {
-    e.preventdefault();
+  handleSubmission = (e) => {
+    e.preventDefault();
 
     let { title, content } = this.state;
-    this.props.addNote(title, content)
+    this.props.addNote(title, content);
 
-    this.setState({ title: '', content: '' })
-  }
+    this.setState({ title: '', content: '' });
+  };
 
   render() {
     return (
       <React.Fragment>
-        <h3>Ajouter une note</h3>
-        <form onsubmit={this.handleSubmit}>
+        <h3>Add a Note</h3>
+
+        <form onSubmit={this.handleSubmission}>
           Titre: <br />
-          <input type="text" name="title" value={this.state.title} onchange={this.handleChange} />
+          <input
+            type="text"
+            name="title"
+            value={this.state.title}
+            onChange={this.handleChange}
+          />
           <br />
           Contenu: <br />
-          <textarea type="text" name="content" value={this.state.content} onchange={this.handleChange}></textarea>
+          <textarea
+            name="content"
+            value={this.state.content}
+            onChange={this.handleChange}
+          ></textarea>
           <br />
           <button type="submit">Ajouter</button>
         </form>
       </React.Fragment>
-    )
+    );
   }
 }
 
-export default connect(null, { addNote: addNote })(NotesForm)
+export default connect(null, {
+  addNote: addNote,
+})(NotesForm);
