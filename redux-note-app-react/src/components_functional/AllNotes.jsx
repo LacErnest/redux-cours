@@ -10,7 +10,7 @@ const AllNotes = () => {
 
   const noteItems = notes.map((note, index) => (
     <li key={index}>
-      <b>{note.title}</b>
+      <b>{note.title}</b> <br />
       <button onClick={() => dispatch(removeNote(index))}>Supprimer</button>
       <br />
       <span>{note.content}</span>

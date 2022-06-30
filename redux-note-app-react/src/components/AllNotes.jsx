@@ -10,7 +10,7 @@ class AllNotes extends Component {
   render() {
     const notesItems = this.props.notes.map((note, index) => (
       <li key={index}>
-        <b>{note.title}</b>
+        <b>{note.title}</b> <br />
         <button onClick={() => this.removeNote(index)}>Supprimer</button>
         <br />
         <span>{note.content}</span>

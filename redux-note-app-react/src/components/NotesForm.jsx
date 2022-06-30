@@ -28,7 +28,7 @@ class NotesForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3>Add a Note</h3>
+        <h3>Ajouter une Note</h3>
 
         <form onSubmit={this.handleSubmission}>
           Titre: <br />
