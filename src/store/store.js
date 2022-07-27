@@ -1,12 +1,8 @@
-import { createStore } from 'redux'
-import rootReducer from '../reducers/reducers'
+import { createStore } from 'redux';
+import rootReducer from '../reducers/reducers';
 
-let initialState = {
-  notes: [
-    { title: 'Premier titre', content: 'Premier contenu' },
-    { title: 'Second titre', content: 'Second contenu' },
-  ],
-  visibility: 'VISIBLE'
-}
-
-export default createStore(rootReducer, initialState);
+export default createStore(
+  rootReducer,
+  undefined,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);

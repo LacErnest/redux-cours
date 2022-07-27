@@ -6,7 +6,7 @@ export default class Notes extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Version React de l'app des notes</h1>
+        <h1>Notes App</h1>
 
         <NotesForm />
         <hr />

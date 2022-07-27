@@ -28,10 +28,10 @@ class NotesForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h3>Ajouter une Note</h3>
+        <h3>Add Note</h3>
 
         <form onSubmit={this.handleSubmission}>
-          Titre: <br />
+          Title: <br />
           <input
             type="text"
             name="title"
@@ -39,14 +39,14 @@ class NotesForm extends Component {
             onChange={this.handleChange}
           />
           <br />
-          Contenu: <br />
+          Content: <br />
           <textarea
             name="content"
             value={this.state.content}
             onChange={this.handleChange}
           ></textarea>
           <br />
-          <button type="submit">Ajouter</button>
+          <button type="submit">Add Note</button>
         </form>
       </React.Fragment>
     );
