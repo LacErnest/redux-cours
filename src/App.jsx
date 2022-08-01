@@ -1,6 +1,7 @@
 import logo from './logo.svg'
 import './App.css'
-import Notes from './components/Notes'
+//import Notes from './components/Notes'
+import Notes from './components_functional/Notes'
 
 
 function App() {
